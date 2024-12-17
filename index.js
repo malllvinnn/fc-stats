@@ -21,14 +21,14 @@ class ErrorInvalidArgument extends Error {
  * @throws {ErrorInvalidArgument} - Thrown if the input is not an array of numbers.
  *
  * @example
- * // Returns 10
- * sum([1, 2, 3, 4]);
+ * // Returns 31
+ * sum([1, 2, 4, 8, 16]);
  *
  * @example
  * // Throws ErrorInvalidArgument
  * sum("not an array");
  */
-function sum(nums) {
+export function sum(nums) {
   if (!Array.isArray(nums) || !nums.every(num => typeof num === "number")) {
     throw new ErrorInvalidArgument("Input must be an array of numbers.");
   }
@@ -43,14 +43,14 @@ function sum(nums) {
  * @throws {ErrorInvalidArgument} - Thrown if the array is empty or not an array of numbers.
  *
  * @example
- * // Returns 2.5
- * average([1, 2, 3, 4]);
+ * // Returns 6.2
+ * average([1, 2, 4, 8, 16]);
  *
  * @example
  * // Throws ErrorInvalidArgument
  * average([]);
  */
-function average(nums) {
+export function average(nums) {
   if (!Array.isArray(nums) || !nums.every(num => typeof num === "number")) {
     throw new ErrorInvalidArgument("Input must be a non-empty array of numbers.");
   }
@@ -75,7 +75,7 @@ function average(nums) {
  * // Returns 2.5
  * median([1, 2, 3, 4]);
  */
-function median(nums) {
+export function median(nums) {
   if (!Array.isArray(nums) || !nums.every(num => typeof num === "number")) {
     throw new ErrorInvalidArgument("Input must be an array of numbers.");
   }
@@ -96,6 +96,4 @@ function isEven(n) {
   return n % 2 === 0;
 }
 
-module.exports = {
-  sum, average, median
-};
+
